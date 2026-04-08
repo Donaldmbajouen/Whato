@@ -1,9 +1,9 @@
 import { MessageCircle } from "lucide-react";
 
 const links = {
-  Product: ["Features", "Pricing", "Demo", "Integrations"],
-  Company: ["About", "Blog", "Careers", "Contact"],
-  Support: ["Help Center", "API Docs", "Status", "Privacy Policy"],
+  Produit: ["Fonctionnalités", "Tarifs", "Démo", "Intégrations"],
+  Entreprise: ["À propos", "Blog", "Carrières", "Contact"],
+  Support: ["Centre d'aide", "Documentation API", "Statut", "Politique de confidentialité"],
 };
 
 export function Footer() {
@@ -17,11 +17,11 @@ export function Footer() {
                 <MessageCircle className="w-4 h-4 text-primary-foreground" />
               </div>
               <span className="font-display font-extrabold text-lg text-foreground">
-                WhatsAuto <span className="text-primary">AI</span>
+                Whato
               </span>
             </a>
             <p className="text-sm text-muted-foreground leading-relaxed max-w-xs">
-              Automate your WhatsApp customer support with AI. Save time, increase sales, delight customers.
+              Automatisez votre support client WhatsApp avec l'IA. Gagnez du temps, augmentez vos ventes, ravissez vos clients.
             </p>
           </div>
 
@@ -43,7 +43,7 @@ export function Footer() {
 
         <div className="mt-12 pt-8 border-t border-border flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-sm text-muted-foreground">
-            © {new Date().getFullYear()} WhatsAuto AI. All rights reserved.
+            © {new Date().getFullYear()} Whato. Tous droits réservés.
           </p>
           <div className="flex items-center gap-4">
             {["Twitter", "LinkedIn", "GitHub"].map((s) => (

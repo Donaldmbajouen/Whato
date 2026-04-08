@@ -2,12 +2,12 @@ import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { Brain, MessageSquare, Zap, History, Building2, Code2 } from "lucide-react";
 
 const features = [
-  { icon: Brain, title: "AI-Powered Replies", desc: "Gemini AI understands context and generates human-like responses tailored to your business." },
-  { icon: MessageSquare, title: "Smart FAQ System", desc: "Pre-configure answers to common questions for instant, accurate replies every time." },
-  { icon: Zap, title: "Real-Time Responses", desc: "Reply to customers in seconds, not hours. Never leave a message unanswered." },
-  { icon: History, title: "Conversation History", desc: "Full chat logs and analytics. Track every conversation and improve over time." },
-  { icon: Building2, title: "Multi-Business Support", desc: "Manage multiple WhatsApp numbers and businesses from a single dashboard." },
-  { icon: Code2, title: "No Coding Required", desc: "Set up in minutes with our intuitive interface. No developers needed." },
+  { icon: Brain, title: "Réponses IA", desc: "Gemini AI comprend le contexte et génère des réponses naturelles adaptées à votre entreprise." },
+  { icon: MessageSquare, title: "Système FAQ intelligent", desc: "Pré-configurez les réponses aux questions fréquentes pour des réponses instantanées et précises." },
+  { icon: Zap, title: "Réponses en temps réel", desc: "Répondez à vos clients en secondes, pas en heures. Ne laissez plus jamais un message sans réponse." },
+  { icon: History, title: "Historique des conversations", desc: "Logs complets et analytics. Suivez chaque conversation et améliorez-vous avec le temps." },
+  { icon: Building2, title: "Multi-entreprises", desc: "Gérez plusieurs numéros WhatsApp et entreprises depuis un seul tableau de bord." },
+  { icon: Code2, title: "Sans code", desc: "Configurez en quelques minutes avec notre interface intuitive. Aucun développeur nécessaire." },
 ];
 
 export function Features() {
@@ -17,9 +17,9 @@ export function Features() {
     <section id="features" ref={ref} className="py-24 lg:py-32 bg-muted/30">
       <div className="container mx-auto px-4">
         <div className={`text-center mb-16 transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}>
-          <span className="text-sm font-bold text-primary uppercase tracking-widest">Features</span>
+          <span className="text-sm font-bold text-primary uppercase tracking-widest">Fonctionnalités</span>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold font-display mt-3 text-foreground">
-            Everything you need to <span className="text-gradient">automate support</span>
+            Tout ce qu'il faut pour <span className="text-primary">automatiser le support</span>
           </h2>
         </div>
 

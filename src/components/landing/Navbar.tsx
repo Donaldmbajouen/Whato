@@ -3,10 +3,10 @@ import { Button } from "@/components/ui/button";
 import { MessageCircle, Menu, X } from "lucide-react";
 
 const navLinks = [
-  { label: "Features", href: "#features" },
-  { label: "How It Works", href: "#how-it-works" },
-  { label: "Pricing", href: "#pricing" },
-  { label: "Testimonials", href: "#testimonials" },
+  { label: "Fonctionnalités", href: "#features" },
+  { label: "Comment ça marche", href: "#how-it-works" },
+  { label: "Tarifs", href: "#pricing" },
+  { label: "Témoignages", href: "#testimonials" },
 ];
 
 export function Navbar() {
@@ -34,7 +34,7 @@ export function Navbar() {
               <MessageCircle className="w-5 h-5 text-primary-foreground" />
             </div>
             <span className="font-display font-extrabold text-xl tracking-tight text-foreground">
-              WhatsAuto <span className="text-primary">AI</span>
+              Whato
             </span>
           </a>
 
@@ -52,10 +52,10 @@ export function Navbar() {
 
           <div className="hidden lg:flex items-center gap-3">
             <Button variant="ghost" className="text-sm font-medium">
-              Log In
+              Connexion
             </Button>
             <Button className="bg-primary text-primary-foreground hover:bg-primary/90 shadow-lg shadow-primary/25 font-semibold">
-              Start Free Trial
+              Essai Gratuit
             </Button>
           </div>
 
@@ -82,9 +82,9 @@ export function Navbar() {
               </a>
             ))}
             <div className="pt-2 flex flex-col gap-2">
-              <Button variant="outline" className="w-full">Log In</Button>
+              <Button variant="outline" className="w-full">Connexion</Button>
               <Button className="w-full bg-primary text-primary-foreground shadow-lg shadow-primary/25 font-semibold">
-                Start Free Trial
+                Essai Gratuit
               </Button>
             </div>
           </div>

@@ -49,28 +49,7 @@ export function HeroSection() {
               </Button>
             </div>
 
-            <div className="mt-10 flex items-center gap-6">
-              <div className="flex -space-x-3">
-                {[1, 2, 3, 4].map((i) => (
-                  <div
-                    key={i}
-                    className="w-10 h-10 rounded-full border-2 border-background bg-muted flex items-center justify-center text-xs font-bold text-muted-foreground"
-                  >
-                    {String.fromCharCode(64 + i)}
-                  </div>
-                ))}
-              </div>
-              <div>
-                <div className="flex items-center gap-1 mb-0.5">
-                  {[1, 2, 3, 4, 5].map((i) => (
-                    <span key={i} className="text-yellow-400 text-sm">★</span>
-                  ))}
-                </div>
-                <p className="text-sm text-muted-foreground">
-                  Utilisé par <span className="font-semibold text-foreground">500+</span> entreprises
-                </p>
-              </div>
-            </div>
+           
           </div>
 
           <div className="relative flex justify-center lg:justify-end animate-fade-in" style={{ animationDelay: "0.3s" }}>

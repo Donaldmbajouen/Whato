@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { MessageCircle, Menu, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 
 const navLinks = [
   { label: "Fonctionnalités", href: "#features" },
@@ -12,9 +12,29 @@ const navLinks = [
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState("");
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 20);
+    const onScroll = () => {
+      setScrolled(window.scrollY > 20);
+
+      // Déterminer la section active
+      const sections = navLinks.map((link) => link.href.substring(1)); // enlever le #
+      let current = "";
+
+      for (const section of sections) {
+        const element = document.getElementById(section);
+        if (element) {
+          const rect = element.getBoundingClientRect();
+          if (rect.top <= 200) {
+            current = section;
+          }
+        }
+      }
+
+      setActiveSection(current);
+    };
+
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
@@ -28,26 +48,29 @@ export function Navbar() {
       }`}
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16 lg:h-20">
-          <a href="#" className="flex items-center gap-2.5 group">
-            <div className="w-9 h-9 rounded-xl bg-primary flex items-center justify-center shadow-lg shadow-primary/30 group-hover:shadow-primary/50 transition-shadow">
-              <MessageCircle className="w-5 h-5 text-primary-foreground" />
-            </div>
-            <span className="font-display font-extrabold text-xl tracking-tight text-foreground">
-              Whato
-            </span>
+        <div className="flex items-center justify-between h-auto py-2 lg:h-32">
+          <a href="#" className="flex items-center group flex-shrink-0">
+            <img src="/whato.png" alt="Whato" className="h-25 sm:h-30 lg:h-40 w-auto" />
           </a>
 
           <div className="hidden lg:flex items-center gap-1">
-            {navLinks.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                className="px-4 py-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors rounded-lg hover:bg-muted"
-              >
-                {link.label}
-              </a>
-            ))}
+            {navLinks.map((link) => {
+              const sectionId = link.href.substring(1);
+              const isActive = activeSection === sectionId;
+              return (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  className={`px-4 py-2 text-sm font-medium transition-colors rounded-lg ${
+                    isActive
+                      ? "text-primary bg-primary/10 font-semibold"
+                      : "text-muted-foreground hover:text-foreground hover:bg-muted"
+                  }`}
+                >
+                  {link.label}
+                </a>
+              );
+            })}
           </div>
 
           <div className="hidden lg:flex items-center gap-3">
@@ -68,28 +91,34 @@ export function Navbar() {
         </div>
       </div>
 
-      {mobileOpen && (
-        <div className="lg:hidden bg-background/95 backdrop-blur-xl border-b border-border animate-fade-in">
-          <div className="container mx-auto px-4 py-4 flex flex-col gap-2">
-            {navLinks.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                onClick={() => setMobileOpen(false)}
-                className="px-4 py-3 text-sm font-medium text-muted-foreground hover:text-foreground rounded-lg hover:bg-muted transition-colors"
-              >
-                {link.label}
-              </a>
-            ))}
-            <div className="pt-2 flex flex-col gap-2">
-              <Button variant="outline" className="w-full">Connexion</Button>
-              <Button className="w-full bg-primary text-primary-foreground shadow-lg shadow-primary/25 font-semibold">
-                Essai Gratuit
-              </Button>
+          <div className="lg:hidden bg-background/95 backdrop-blur-xl border-b border-border animate-fade-in">
+            <div className="container mx-auto px-4 py-4 flex flex-col gap-2">
+              {navLinks.map((link) => {
+                const sectionId = link.href.substring(1);
+                const isActive = activeSection === sectionId;
+                return (
+                  <a
+                    key={link.href}
+                    href={link.href}
+                    onClick={() => setMobileOpen(false)}
+                    className={`px-4 py-3 text-sm font-medium rounded-lg transition-colors ${
+                      isActive
+                        ? "text-primary bg-primary/10 font-semibold"
+                        : "text-muted-foreground hover:text-foreground hover:bg-muted"
+                    }`}
+                  >
+                    {link.label}
+                  </a>
+                );
+              })}
+              <div className="pt-2 flex flex-col gap-2">
+                <Button variant="outline" className="w-full">Connexion</Button>
+                <Button className="w-full bg-primary text-primary-foreground shadow-lg shadow-primary/25 font-semibold">
+                  Essai Gratuit
+                </Button>
+              </div>
             </div>
           </div>
-        </div>
-      )}
     </nav>
   );
 }

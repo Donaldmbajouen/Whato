@@ -65,7 +65,7 @@ export function Benefits() {
             </div>
           </div>
 
-          <div className={`grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-1 gap-6 transition-all duration-700 ${isVisible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-8"}`}>
+          <div className={`grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-1 gap-4 sm:gap-6 transition-all duration-700 ${isVisible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-8"}`}>
             {stats.map((stat, i) => (
               <div
                 key={i}

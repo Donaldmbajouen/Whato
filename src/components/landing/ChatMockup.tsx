@@ -30,7 +30,7 @@ export function ChatMockup() {
   }, [visibleCount]);
 
   return (
-    <div className="animate-float w-full max-w-sm">
+    <div className="animate-float w-full max-w-[340px] sm:max-w-[380px] lg:max-w-sm mx-auto lg:mx-0">
       <div className="rounded-[2rem] bg-foreground/5 border border-border p-2 shadow-2xl shadow-primary/10">
         <div className="rounded-[1.5rem] bg-card overflow-hidden">
           <div className="bg-accent px-4 py-3 flex items-center gap-3">

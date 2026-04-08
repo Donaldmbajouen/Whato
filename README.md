@@ -1,3 +1,3 @@
-# Welcome to your Lovable project
+# WhatsAuto AI
 
-TODO: Document your project here
+A modern landing page for WhatsAuto AI — WhatsApp automation platform.

@@ -1,5 +1,3 @@
-import { MessageCircle } from "lucide-react";
-
 const links = {
   Produit: ["Fonctionnalités", "Tarifs", "Démo", "Intégrations"],
   Entreprise: ["À propos", "Blog", "Carrières", "Contact"],
@@ -10,15 +8,10 @@ export function Footer() {
   return (
     <footer className="border-t border-border bg-muted/20 py-16">
       <div className="container mx-auto px-4">
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-12">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10 lg:gap-12">
           <div>
-            <a href="#" className="flex items-center gap-2.5 mb-4">
-              <div className="w-8 h-8 rounded-lg bg-primary flex items-center justify-center">
-                <MessageCircle className="w-4 h-4 text-primary-foreground" />
-              </div>
-              <span className="font-display font-extrabold text-lg text-foreground">
-                Whato
-              </span>
+            <a href="#" className="flex items-center gap-2 mb-4 flex-shrink-0">
+              <img src="/whato.png" alt="Whato" className="h-8 w-auto" />
             </a>
             <p className="text-sm text-muted-foreground leading-relaxed max-w-xs">
               Automatisez votre support client WhatsApp avec l'IA. Gagnez du temps, augmentez vos ventes, ravissez vos clients.

@@ -12,13 +12,9 @@ export function HeroSection() {
       </div>
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        <div className="grid lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-16 items-center">
           <div className="max-w-xl animate-fade-in">
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-semibold mb-6 border border-primary/20">
-              <span className="w-2 h-2 bg-primary rounded-full animate-pulse" />
-              Propulsé par Gemini AI
-            </div>
-
+            
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold font-display leading-[1.1] tracking-tight text-foreground mb-6">
               Automatisez votre support WhatsApp{" "}
               <span className="text-primary">avec l'IA</span>
@@ -29,10 +25,10 @@ export function HeroSection() {
               Une IA intelligente qui comprend votre business et ravit vos clients.
             </p>
 
-            <div className="flex flex-wrap gap-4">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
               <Button
                 size="lg"
-                className="bg-primary text-primary-foreground hover:bg-primary/90 shadow-xl shadow-primary/25 font-bold text-base h-13 px-8 group"
+                className="bg-primary text-primary-foreground hover:bg-primary/90 shadow-xl shadow-primary/25 font-bold text-base h-12 px-6 sm:px-8 group"
               >
                 Essai Gratuit
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -40,7 +36,7 @@ export function HeroSection() {
               <Button
                 size="lg"
                 variant="outline"
-                className="font-semibold text-base h-13 px-8 border-border hover:bg-muted group"
+                className="font-semibold text-base h-12 px-6 sm:px-8 border-border hover:bg-muted group"
               >
                 <Play className="w-4 h-4 mr-1 group-hover:scale-110 transition-transform" />
                 Réserver une Démo

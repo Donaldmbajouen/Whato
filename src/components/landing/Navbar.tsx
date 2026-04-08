@@ -74,11 +74,15 @@ export function Navbar() {
           </div>
 
           <div className="hidden lg:flex items-center gap-3">
-            <Button variant="ghost" className="text-sm font-medium">
-              Connexion
+            <Button variant="ghost" className="text-sm font-medium" asChild>
+              <a href="https://donald-njemi-portofolio.vercel.app/" target="_blank" rel="noopener noreferrer">
+                Connexion
+              </a>
             </Button>
-            <Button className="bg-primary text-primary-foreground hover:bg-primary/90 shadow-lg shadow-primary/25 font-semibold">
-              Essai Gratuit
+            <Button className="bg-primary text-primary-foreground hover:bg-primary/90 shadow-lg shadow-primary/25 font-semibold" asChild>
+              <a href="https://donald-njemi-portofolio.vercel.app/" target="_blank" rel="noopener noreferrer">
+                Essai Gratuit
+              </a>
             </Button>
           </div>
 
@@ -112,9 +116,15 @@ export function Navbar() {
                 );
               })}
               <div className="pt-2 flex flex-col gap-2">
-                <Button variant="outline" className="w-full">Connexion</Button>
-                <Button className="w-full bg-primary text-primary-foreground shadow-lg shadow-primary/25 font-semibold">
-                  Essai Gratuit
+                <Button variant="outline" className="w-full" asChild>
+                  <a href="https://donald-njemi-portofolio.vercel.app/" target="_blank" rel="noopener noreferrer">
+                    Connexion
+                  </a>
+                </Button>
+                <Button className="w-full bg-primary text-primary-foreground shadow-lg shadow-primary/25 font-semibold" asChild>
+                  <a href="https://donald-njemi-portofolio.vercel.app/" target="_blank" rel="noopener noreferrer">
+                    Essai Gratuit
+                  </a>
                 </Button>
               </div>
             </div>

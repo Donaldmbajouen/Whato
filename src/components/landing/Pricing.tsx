@@ -89,8 +89,15 @@ export function Pricing() {
                       : "bg-muted text-foreground hover:bg-muted/80"
                 }`}
                 disabled={plan.disabled}
+                asChild={!plan.disabled}
               >
-                {plan.disabled ? "Bientôt disponible" : "Commencer"}
+                {plan.disabled ? (
+                  <span>Bientôt disponible</span>
+                ) : (
+                  <a href="https://donald-njemi-portofolio.vercel.app/" target="_blank" rel="noopener noreferrer">
+                    Commencer
+                  </a>
+                )}
               </Button>
 
               <ul className="space-y-3">

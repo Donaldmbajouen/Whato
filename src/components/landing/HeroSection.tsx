@@ -29,17 +29,23 @@ export function HeroSection() {
               <Button
                 size="lg"
                 className="bg-primary text-primary-foreground hover:bg-primary/90 shadow-xl shadow-primary/25 font-bold text-base h-12 px-6 sm:px-8 group"
+                asChild
               >
-                Essai Gratuit
-                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                <a href="https://donald-njemi-portofolio.vercel.app/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
+                  Essai Gratuit
+                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                </a>
               </Button>
               <Button
                 size="lg"
                 variant="outline"
                 className="font-semibold text-base h-12 px-6 sm:px-8 border-border hover:bg-muted group"
+                asChild
               >
-                <Play className="w-4 h-4 mr-1 group-hover:scale-110 transition-transform" />
-                Réserver une Démo
+                <a href="https://donald-njemi-portofolio.vercel.app/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
+                  <Play className="w-4 h-4 group-hover:scale-110 transition-transform" />
+                  Réserver une Démo
+                </a>
               </Button>
             </div>
 

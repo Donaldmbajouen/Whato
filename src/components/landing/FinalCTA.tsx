@@ -23,9 +23,12 @@ export function FinalCTA() {
             <Button
               size="lg"
               className="bg-primary text-primary-foreground hover:bg-primary/90 shadow-xl shadow-primary/30 font-bold text-base h-14 px-10 group"
+              asChild
             >
-              Commencer — C'est Gratuit
-              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              <a href="https://donald-njemi-portofolio.vercel.app/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
+                Commencer — C'est Gratuit
+                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              </a>
             </Button>
             <p className="text-accent-foreground/50 text-sm mt-4">14 jours d'essai gratuit • Aucune carte bancaire requise</p>
           </div>

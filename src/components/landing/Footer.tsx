@@ -10,12 +10,9 @@ export function Footer() {
       <div className="container mx-auto px-4">
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10 lg:gap-12">
           <div>
-            <a href="#" className="flex items-center gap-2 mb-4 flex-shrink-0">
-              <img src="/whato.png" alt="Whato" className="h-8 w-auto" />
+            <a href="#" className="flex items-center flex-shrink-0">
+              <img src="/whato.png" alt="Whato" />
             </a>
-            <p className="text-sm text-muted-foreground leading-relaxed max-w-xs">
-              Automatisez votre support client WhatsApp avec l'IA. Gagnez du temps, augmentez vos ventes, ravissez vos clients.
-            </p>
           </div>
 
           {Object.entries(links).map(([category, items]) => (
@@ -36,12 +33,30 @@ export function Footer() {
 
         <div className="mt-12 pt-8 border-t border-border flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-sm text-muted-foreground">
-            © {new Date().getFullYear()} Whato. Tous droits réservés.
+            © {new Date().getFullYear()} Whato. Made by{" "}
+            <a
+              href="https://donald-njemi-portofolio.vercel.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-primary hover:text-primary/80 font-semibold transition-colors"
+            >
+              Donald Njemi
+            </a>
           </p>
           <div className="flex items-center gap-4">
-            {["Twitter", "LinkedIn", "GitHub"].map((s) => (
-              <a key={s} href="#" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-                {s}
+            {[
+              { label: "Twitter", url: "https://donald-njemi-portofolio.vercel.app/" },
+              { label: "LinkedIn", url: "https://donald-njemi-portofolio.vercel.app/" },
+              { label: "GitHub", url: "https://donald-njemi-portofolio.vercel.app/" },
+            ].map((social) => (
+              <a
+                key={social.label}
+                href={social.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm text-muted-foreground hover:text-primary transition-colors"
+              >
+                {social.label}
               </a>
             ))}
           </div>

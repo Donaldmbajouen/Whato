@@ -3,10 +3,10 @@ import { useEffect, useState } from "react";
 import { CheckCircle2 } from "lucide-react";
 
 const benefits = [
-  "Never miss a customer message",
-  "Save hours every day on support",
-  "Increase sales conversions by 40%",
-  "Improve customer satisfaction scores",
+  "Ne ratez plus jamais un message client",
+  "Gagnez des heures chaque jour sur le support",
+  "Augmentez vos conversions de 40%",
+  "Améliorez la satisfaction de vos clients",
 ];
 
 function AnimatedCounter({ target, suffix = "", isVisible }: { target: number; suffix?: string; isVisible: boolean }) {
@@ -31,9 +31,9 @@ function AnimatedCounter({ target, suffix = "", isVisible }: { target: number; s
 }
 
 const stats = [
-  { value: 10000, suffix: "+", label: "Messages Handled" },
-  { value: 99, suffix: "%", label: "Response Rate" },
-  { value: 5, suffix: " min", label: "Avg Setup Time" },
+  { value: 10000, suffix: "+", label: "Messages traités" },
+  { value: 99, suffix: "%", label: "Taux de réponse" },
+  { value: 5, suffix: " min", label: "Temps de configuration" },
 ];
 
 export function Benefits() {
@@ -44,9 +44,9 @@ export function Benefits() {
       <div className="container mx-auto px-4">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <div className={`transition-all duration-700 ${isVisible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-8"}`}>
-            <span className="text-sm font-bold text-primary uppercase tracking-widest">Benefits</span>
+            <span className="text-sm font-bold text-primary uppercase tracking-widest">Avantages</span>
             <h2 className="text-3xl sm:text-4xl font-extrabold font-display mt-3 mb-8 text-foreground">
-              Why businesses <span className="text-gradient">love WhatsAuto AI</span>
+              Pourquoi les entreprises <span className="text-primary">adorent Whato</span>
             </h2>
 
             <div className="space-y-5">

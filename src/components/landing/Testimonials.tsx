@@ -3,22 +3,22 @@ import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 const testimonials = [
   {
     name: "Amina K.",
-    role: "Bakery Owner",
-    quote: "WhatsAuto AI saves me 3 hours every day. My customers get instant replies about orders and prices even when I'm baking!",
+    role: "Propriétaire de boulangerie",
+    quote: "Whato me fait gagner 3 heures chaque jour. Mes clients reçoivent des réponses instantanées sur les commandes et les prix même quand je suis en cuisine !",
     avatar: "AK",
     stars: 5,
   },
   {
     name: "Carlos M.",
-    role: "Hair Salon Owner",
-    quote: "Booking appointments used to take forever. Now the AI handles 80% of my WhatsApp messages automatically. Game changer!",
+    role: "Gérant de salon de coiffure",
+    quote: "La prise de rendez-vous prenait une éternité. Maintenant l'IA gère 80% de mes messages WhatsApp automatiquement. Un vrai game changer !",
     avatar: "CM",
     stars: 5,
   },
   {
     name: "Fatima R.",
-    role: "Online Shop Owner",
-    quote: "My sales increased by 35% since using WhatsAuto AI. Customers love getting instant responses about product availability.",
+    role: "Propriétaire de boutique en ligne",
+    quote: "Mes ventes ont augmenté de 35% depuis que j'utilise Whato. Les clients adorent recevoir des réponses instantanées sur la disponibilité des produits.",
     avatar: "FR",
     stars: 5,
   },
@@ -31,9 +31,9 @@ export function Testimonials() {
     <section id="testimonials" ref={ref} className="py-24 lg:py-32 bg-muted/30">
       <div className="container mx-auto px-4">
         <div className={`text-center mb-16 transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}>
-          <span className="text-sm font-bold text-primary uppercase tracking-widest">Testimonials</span>
+          <span className="text-sm font-bold text-primary uppercase tracking-widest">Témoignages</span>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold font-display mt-3 text-foreground">
-            Loved by <span className="text-gradient">business owners</span>
+            Adoré par les <span className="text-primary">entrepreneurs</span>
           </h2>
         </div>
 

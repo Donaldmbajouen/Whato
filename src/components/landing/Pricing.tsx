@@ -5,24 +5,30 @@ import { Check } from "lucide-react";
 const plans = [
   {
     name: "Starter",
-    price: 29,
-    desc: "Perfect for small businesses getting started.",
-    features: ["1,000 messages/month", "Basic AI responses", "1 WhatsApp number", "FAQ system", "Email support"],
-    popular: false,
+    price: "20 000",
+    currency: "FCFA",
+    desc: "Parfait pour les petites entreprises qui débutent.",
+    features: ["1 000 messages/mois", "Réponses IA de base", "1 numéro WhatsApp", "Système FAQ", "Support par email"],
+    popular: true,
+    disabled: false,
   },
   {
     name: "Pro",
-    price: 79,
-    desc: "For growing businesses that need more power.",
-    features: ["10,000 messages/month", "Advanced AI (Gemini)", "3 WhatsApp numbers", "Conversation history", "Priority support", "Analytics dashboard"],
-    popular: true,
+    price: "—",
+    currency: "",
+    desc: "Pour les entreprises en croissance. Bientôt disponible.",
+    features: ["10 000 messages/mois", "IA avancée (Gemini)", "3 numéros WhatsApp", "Historique des conversations", "Support prioritaire", "Tableau de bord analytics"],
+    popular: false,
+    disabled: true,
   },
   {
     name: "Business",
-    price: 149,
-    desc: "For enterprises with high-volume needs.",
-    features: ["Unlimited messages", "Custom AI training", "Unlimited numbers", "API access", "Dedicated manager", "Custom integrations", "SLA guarantee"],
+    price: "—",
+    currency: "",
+    desc: "Pour les entreprises à fort volume. Bientôt disponible.",
+    features: ["Messages illimités", "IA personnalisée", "Numéros illimités", "Accès API", "Manager dédié", "Intégrations sur mesure", "Garantie SLA"],
     popular: false,
+    disabled: true,
   },
 ];
 
@@ -33,12 +39,12 @@ export function Pricing() {
     <section id="pricing" ref={ref} className="py-24 lg:py-32">
       <div className="container mx-auto px-4">
         <div className={`text-center mb-16 transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}>
-          <span className="text-sm font-bold text-primary uppercase tracking-widest">Pricing</span>
+          <span className="text-sm font-bold text-primary uppercase tracking-widest">Tarifs</span>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold font-display mt-3 text-foreground">
-            Simple, transparent <span className="text-gradient">pricing</span>
+            Des tarifs simples et <span className="text-primary">transparents</span>
           </h2>
           <p className="text-muted-foreground mt-4 max-w-md mx-auto">
-            Start free for 14 days. No credit card required.
+            Essayez gratuitement pendant 14 jours. Aucune carte bancaire requise.
           </p>
         </div>
 
@@ -47,15 +53,22 @@ export function Pricing() {
             <div
               key={i}
               className={`relative rounded-2xl p-8 transition-all duration-700 ${
-                plan.popular
-                  ? "bg-card border-2 border-primary shadow-2xl shadow-primary/10 scale-[1.02] lg:scale-105"
-                  : "bg-card border border-border hover:border-primary/30 hover:shadow-xl hover:shadow-primary/5"
+                plan.disabled
+                  ? "bg-muted/50 border border-border opacity-60"
+                  : plan.popular
+                    ? "bg-card border-2 border-primary shadow-2xl shadow-primary/10 scale-[1.02] lg:scale-105"
+                    : "bg-card border border-border hover:border-primary/30 hover:shadow-xl hover:shadow-primary/5"
               } ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
               style={{ transitionDelay: `${i * 150}ms` }}
             >
               {plan.popular && (
                 <span className="absolute -top-3.5 left-1/2 -translate-x-1/2 px-4 py-1 bg-primary text-primary-foreground text-xs font-bold rounded-full shadow-lg shadow-primary/30">
-                  Most Popular
+                  Recommandé
+                </span>
+              )}
+              {plan.disabled && (
+                <span className="absolute -top-3.5 left-1/2 -translate-x-1/2 px-4 py-1 bg-muted-foreground text-background text-xs font-bold rounded-full">
+                  Bientôt
                 </span>
               )}
 
@@ -63,24 +76,27 @@ export function Pricing() {
               <p className="text-sm text-muted-foreground mt-1 mb-6">{plan.desc}</p>
 
               <div className="mb-6">
-                <span className="text-4xl font-extrabold text-foreground">${plan.price}</span>
-                <span className="text-muted-foreground text-sm">/month</span>
+                <span className="text-4xl font-extrabold text-foreground">{plan.price}</span>
+                {plan.currency && <span className="text-muted-foreground text-sm"> {plan.currency}/mois</span>}
               </div>
 
               <Button
                 className={`w-full font-semibold mb-8 ${
-                  plan.popular
-                    ? "bg-primary text-primary-foreground hover:bg-primary/90 shadow-lg shadow-primary/25"
-                    : "bg-muted text-foreground hover:bg-muted/80"
+                  plan.disabled
+                    ? "bg-muted text-muted-foreground cursor-not-allowed"
+                    : plan.popular
+                      ? "bg-primary text-primary-foreground hover:bg-primary/90 shadow-lg shadow-primary/25"
+                      : "bg-muted text-foreground hover:bg-muted/80"
                 }`}
+                disabled={plan.disabled}
               >
-                Get Started
+                {plan.disabled ? "Bientôt disponible" : "Commencer"}
               </Button>
 
               <ul className="space-y-3">
                 {plan.features.map((feat, j) => (
                   <li key={j} className="flex items-center gap-3 text-sm">
-                    <Check className="w-4 h-4 text-primary flex-shrink-0" />
+                    <Check className={`w-4 h-4 flex-shrink-0 ${plan.disabled ? "text-muted-foreground" : "text-primary"}`} />
                     <span className="text-muted-foreground">{feat}</span>
                   </li>
                 ))}

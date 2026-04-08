@@ -2,10 +2,10 @@ import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { Bot, User } from "lucide-react";
 
 const chatExamples = [
-  { from: "user", text: "What are your prices?" },
-  { from: "bot", text: "Our services start from $29/month with the Starter plan. It includes up to 1,000 messages and basic AI responses. Would you like to compare all plans?" },
-  { from: "user", text: "Do you ship internationally?" },
-  { from: "bot", text: "Yes! We ship to over 50 countries. Delivery typically takes 5-10 business days for international orders. Want me to check your specific location?" },
+  { from: "user", text: "Quels sont vos tarifs ?" },
+  { from: "bot", text: "Nos services commencent à 20 000 FCFA/mois avec le plan Starter. Il inclut jusqu'à 1 000 messages et des réponses IA de base. Souhaitez-vous comparer tous les plans ?" },
+  { from: "user", text: "Est-ce que vous livrez à l'international ?" },
+  { from: "bot", text: "Oui ! Nous livrons dans plus de 50 pays. La livraison prend généralement 5 à 10 jours ouvrables. Voulez-vous que je vérifie pour votre localisation ?" },
 ];
 
 export function DemoSection() {
@@ -15,12 +15,12 @@ export function DemoSection() {
     <section ref={ref} className="py-24 lg:py-32 bg-muted/30">
       <div className="container mx-auto px-4">
         <div className={`text-center mb-16 transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}>
-          <span className="text-sm font-bold text-primary uppercase tracking-widest">Live Demo</span>
+          <span className="text-sm font-bold text-primary uppercase tracking-widest">Démo en direct</span>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold font-display mt-3 text-foreground">
-            See it <span className="text-gradient">in action</span>
+            Voyez Whato <span className="text-primary">en action</span>
           </h2>
           <p className="text-muted-foreground mt-4 max-w-lg mx-auto">
-            Here's how WhatsAuto AI handles real customer conversations automatically.
+            Voici comment Whato gère automatiquement les conversations clients.
           </p>
         </div>
 
@@ -31,8 +31,8 @@ export function DemoSection() {
                 <Bot className="w-5 h-5 text-accent-foreground" />
               </div>
               <div>
-                <p className="text-sm font-bold text-accent-foreground">Your Business</p>
-                <p className="text-xs text-accent-foreground/70">WhatsAuto AI Assistant</p>
+                <p className="text-sm font-bold text-accent-foreground">Votre Entreprise</p>
+                <p className="text-xs text-accent-foreground/70">Assistant IA Whato</p>
               </div>
             </div>
 
